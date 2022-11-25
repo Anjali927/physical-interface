@@ -1,3 +1,5 @@
+//Update colors of Week 1 self-portrait sketch according to potentiometer reading
+
 let serial;                             // variable to hold an instance of the serialport library
 // let portName = '/dev/cu.usbmodem1412301';  // fill in your serial port name here
 let inData;                             // for incoming serial data

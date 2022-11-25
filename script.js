@@ -4,7 +4,7 @@ let inData;                             // for incoming serial data
 let portSelector;
 
 let dataMode;
-let buttonData;
+//let buttonData;
 let potentiometerData;
 
 function setup() {
@@ -23,19 +23,11 @@ function setup() {
 
 function draw() {
   // black background, white text:
-  // background(0);
-  // fill(255);
-  // // display the incoming serial data as a string:
-  // text("sensor value: " + inData, 30, 50);
-  // text("pot data:" + potentiometerData, 30, 90)
-
-  // fill(potentiometerData, 128, 128);
-  // if(buttonData === 0) {
-  //   ellipse(300, 300, potentiometerData * 2);
-  // } else {
-  //   rectMode(CENTER)
-  //   rect(300, 300, potentiometerData * 2, potentiometerData * 2)
-  // }
+  background(255);
+  fill(0);
+  // display the incoming serial data as a string:
+  text("sensor value: \n" + inData, 10, 50);
+  text("pot data: \n" + potentiometerData, 10, 90)
 
   fill(1, 40, 60);
   rect(105, 100, 30, 90); //left ear
@@ -61,24 +53,24 @@ function draw() {
   fill(220, 20, 60); //left shoulder
   rect(0, 345, 200, 300, 0, 0, 0, 200);
   
-  fill(255, 255, 0);
-  ellipse(130, 190, potentiometerData * 2, potentiometerData * 2); //left earring
+  fill(potentiometerData, potentiometerData, 0);
+  ellipse(130, 190, 30, 30); //left earring
   noStroke();
   
-  fill(220,20,60);
-  ellipse(270, 180, potentiometerData * 2, potentiometerData * 2); //right earring
+  fill(potentiometerData,20,60);
+  ellipse(270, 180, 60, 60); //right earring
   noStroke();
   
-  fill(220,20,60); //necklace
-  ellipse(180, 330, potentiometerData * 2, potentiometerData * 2);
-  fill(255, 255, 0); //necklace
-  ellipse(190, 330, potentiometerData * 2, potentiometerData * 2);
-  fill(220,20,60); //necklace
-  ellipse(200, 330, potentiometerData * 2, potentiometerData * 2);
-  fill(255, 255, 0); //necklace
-  ellipse(210, 330, potentiometerData * 2, potentiometerData * 2);
-  fill(220,20,60); //necklace
-  ellipse(220, 330, potentiometerData * 2, potentiometerData * 2);
+  fill(potentiometerData,20,60); //necklace
+  ellipse(180, 330, 10, 10);
+  fill(potentiometerData, potentiometerData, 0); //necklace
+  ellipse(190, 330, 10, 10);
+  fill(potentiometerData,20,60); //necklace
+  ellipse(200, 330, 10, 10);
+  fill(potentiometerData, potentiometerData, 0); //necklace
+  ellipse(210, 330, 10, 10);
+  fill(potentiometerData,20,60); //necklace
+  ellipse(220, 330, 10, 10);
   
   fill(255, 255, 0, 150); //eyeshadow
   rect(220, 50, 55, 35);
@@ -98,11 +90,11 @@ function draw() {
   translate(250,85);
   beginShape();
   vertex(-40,0);
-  bezierVertex(-10, -20, 0, -30, 40, 0);
+  bezierVertex(-10,-20,0,-30,40,0);
   endShape();
   
   fill(0); //eyeball
-  ellipse(0, -11, potentiometerData * 2, potentiometerData * 2);
+  ellipse(0,-11,15,15);
   
 }
 
@@ -148,9 +140,9 @@ function serialEvent() {
     dataMode = "button"
   } else if (dataMode === "potentiometer") {
     potentiometerData = inString
-  } else if (dataMode === "button") {
-    buttonData = inString
-  }
+  } //else if (dataMode === "button") {
+    //buttonData = inString
+  //}
  
   inData = inString
 }

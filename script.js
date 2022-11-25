@@ -52,7 +52,7 @@ function draw() {
   fill(1, 40, 60, 130);
   rect(100, -40, 100, 400, 200, 0, 0, 200);
   
-  fill(220, 20, 60); //left shoulder
+  fill(potentiometerData, 20, 60); //left shoulder
   rect(0, 345, 200, 300, 0, 0, 0, 200);
   
   fill(potentiometerData, potentiometerData, 0);
